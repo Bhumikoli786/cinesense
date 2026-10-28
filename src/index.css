@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-cinematic {
+    font-family: var(--font-heading);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Base Light Mode page settings */
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Glassmorphism panels */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+}
+
+/* Automatic Light Mode font readability safeguards */
+.light h1:not([class*="text-transparent"]),
+.light h2:not([class*="text-transparent"]),
+.light h3:not([class*="text-transparent"]) {
+  color: #0f172a;
+}
+
+.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* In light mode, turn standalone white text dark except for buttons, badges, or headers with dark backgrounds */
+.light .text-white:not(button):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-amber"]):not([class*="bg-purple"]):not([class*="bg-cyan"]):not([class*="bg-indigo"]):not([class*="bg-blue"]):not([class*="bg-gradient"]):not([class*="text-transparent"]):not([class*="badge"]):not(.keep-white) {
+  color: #0f172a;
+}
+
+/* Light mode input & select readability */
+.light input:not([type="checkbox"]):not([type="radio"]),
+.light textarea,
+.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode tables */
+.light thead {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.light tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+.light tbody td {
+  border-color: #e2e8f0 !important;
+}
+
+/* Subtle Film Perforation aesthetic */
+.film-perforations {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2.5px);
+  background-size: 16px 16px;
+}
+
+.light .film-perforations {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 2px, transparent 2.5px);
+}

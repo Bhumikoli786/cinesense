@@ -1,0 +1,8 @@
+{
+  "name": "CineSense AI — Intelligent Movie Sentiment Analyzer",
+  "description": "Intelligent Movie Sentiment Analysis web application powered by NLP & Gemini AI, aligned with UN SDG 9 for Digital Entertainment Infrastructure.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
